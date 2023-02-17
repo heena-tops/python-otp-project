@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>My App</title>
+</head>
+<body>
+
+	<center>
+		
+		<h1>Registration Form</h1>
+
+
+		{% if msg %}
+			<p style="color: red;">{{msg}}</p>
+		{% else %}
+			<p style="color: green;">{{msg1}}</p>
+		{% endif %}
+
+		<form action="{% url 'signup' %}" method="POST">
+			{% csrf_token %}
+			
+			<table cellspacing="0px">
+				
+				<tr>
+					<td><label>First Name : </label></td>
+					<td><input type="text" name="fname"/></td>
+				</tr>
+
+				<tr>
+					<td><label>Last Name : </label></td>
+					<td><input type="text" name="lname"/></td>
+				</tr>
+
+				<tr>
+					<td><label>Email : </label></td>
+					<td><input type="email" name="email" required/></td>
+				</tr>
+
+				<tr>
+					<td><label>Password : </label></td>
+					<td><input type="password" name="pswd" required /></td>
+				</tr>
+
+				<tr>
+					<td><label>Address : </label></td>
+					<td><textarea rows=7 cols=50 name="address"></textarea></td>
+				</tr>
+
+				<tr>
+					<td><input type="submit" value="submit"/></td>
+					<td><input type="submit" value="reset"/></td>
+				</tr>
+
+			</table>
+
+		</form>
+
+	</center>
+
+</body>
+</html>

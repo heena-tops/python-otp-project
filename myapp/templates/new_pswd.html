@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>My App</title>
+</head>
+<body>
+	<center>
+
+	<h1>New Password</h1>
+
+	<form action="{% url 'new_pswd' %}" method="POST">
+			{% csrf_token %}
+
+			<input type="hidden" name="email" value="{{email}}" />
+			
+			<table cellspacing="0px">
+
+				<tr>
+					<td><label>New password : </label></td>
+					<td><input type="password" name="new_pswd"/></td>
+				</tr>
+
+				<tr>
+					<td><label>Confirm password : </label></td>
+					<td><input type="password" name="cnew_pswd"/></td>
+				</tr>
+
+				<tr>
+					<td><button type="submit">Update Password</button></td>
+				</tr>
+
+			</table>
+
+		</form>
+
+	</center>
+</body>
+</html>

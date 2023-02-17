@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>My App</title>
+</head>
+<body>
+
+	<center>
+		
+		<h1>Registration Form</h1>
+
+
+		{% if msg %}
+			<p style="color: red;">{{msg}}</p>
+		{% else %}
+			<p style="color: green;">{{msg1}}</p>
+		{% endif %}
+
+		<form action="{% url 'login' %}" method="POST">
+			{% csrf_token %}
+			
+			<table cellspacing="0px">
+
+				<tr>
+					<td><label>Email : </label></td>
+					<td><input type="email" name="email" required/></td>
+				</tr>
+
+				<tr>
+					<td><label>Password : </label></td>
+					<td><input type="password" name="pswd" required /></td>
+				</tr>
+
+				<tr>
+					<td><input type="submit" value="Login"/></td>
+				</tr>
+
+				<tr>
+					<td>
+						<a href="{% url 'forgot_pswd' %}"><button type="button">Forgot password</button></a>
+					</td>
+				</tr>
+
+			</table>
+
+		</form>
+
+	</center>
+
+</body>
+</html>

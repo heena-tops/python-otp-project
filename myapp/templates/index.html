@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>My App</title>
+</head>
+<body>
+
+	<center>
+		
+		<h1>Hello World</h1>
+
+		{% if request.session.email %}
+			<form action="{% url 'logout' %}" method="POST">
+			{% csrf_token %}
+			
+			<p>For Logout ........</p>
+			<input type="submit" value="LOGOUT" />
+
+			</form>
+		{% else %}
+
+			<form action="{% url 'signup' %}" method="POST">
+			{% csrf_token %}
+			
+			<p>For Registration ........</p>
+			<input type="submit" value="REGISTER" />
+
+			</form>
+
+			<form action="{% url 'login' %}" method="POST">
+				{% csrf_token %}
+				
+				<p>For Login ........</p>
+				<input type="submit" value="LOGIN" />
+
+			</form>
+
+		{% endif %}
+		
+
+	</center>
+
+</body>
+</html>
