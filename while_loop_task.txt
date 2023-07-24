@@ -1,0 +1,26 @@
+========Student Management System========
+
+Enter Your id : 
+Enter Your Name : 
+
+Enter Your marks for subject 1:
+sub 2:
+sub 3 : 
+
+Per = 50%
+
+Do You Want to Continue or not: ['y/n']:
+if y or yes : then take again 3 subj makrs
+
+else stop the prog
+
+=========================================
+
+for loop : 
+
+find fact of a number 
+find fibonacci series 
+reverse a number using for loop
+
+
+
